@@ -6,4 +6,9 @@ return [
         'must_be_selected' => 'በ:attribute መስክ ቢያንስ አንድ መመረጥ አለበት።',
         'only_one_must_be_selected' => 'በ:attribute መስክ አንድ ብቻ ነው መመረጥ አለበት።',
     ],
+
+    'date_time_picker' => [
+        'invalid_step' => 'The :attribute value does not align with the required step.',
+    ],
+
 ];

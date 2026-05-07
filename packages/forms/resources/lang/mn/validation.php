@@ -7,4 +7,9 @@ return [
         'only_one_must_be_selected' => ':attribute зөвхөн нэгийг сонгосон байх ёстой.',
     ],
 
+
+    'date_time_picker' => [
+        'invalid_step' => 'The :attribute value does not align with the required step.',
+    ],
+
 ];

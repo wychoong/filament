@@ -142,6 +142,49 @@ class DateTimePicker extends Field implements HasAffixActions
             'date',
             static fn (DateTimePicker $component): bool => $component->hasDate(),
         );
+
+        $this->rule(
+            static function (DateTimePicker $component) {
+                return static function (string $attribute, mixed $value, Closure $fail) use ($component): void {
+                    if (blank($value)) {
+                        return;
+                    }
+
+                    try {
+                        $date = Carbon::parse($value);
+                    } catch (\Exception $exception) {
+                        return;
+                    }
+
+                    $hoursStep = $component->getHoursStep();
+
+                    if ($hoursStep > 1 && ($date->hour % $hoursStep) !== 0) {
+                        $fail(__('filament-forms::validation.date_time_picker.invalid_step'));
+
+                        return;
+                    }
+
+                    $minutesStep = $component->getMinutesStep();
+
+                    if ($minutesStep > 1 && ($date->minute % $minutesStep) !== 0) {
+                        $fail(__('filament-forms::validation.date_time_picker.invalid_step'));
+
+                        return;
+                    }
+
+                    $secondsStep = $component->getSecondsStep();
+
+                    if ($secondsStep > 1 && ($date->second % $secondsStep) !== 0) {
+                        $fail(__('filament-forms::validation.date_time_picker.invalid_step'));
+                    }
+                };
+            },
+            static fn (DateTimePicker $component): bool => $component->hasTime() && (
+                $component->getHoursStep() > 1 ||
+                $component->getMinutesStep() > 1 ||
+                $component->getSecondsStep() > 1
+            ),
+        );
     }
 
     public function displayFormat(string | Closure | null $format): static

@@ -75,8 +75,11 @@
                             displayFormat:
                                 '{{ convert_date_format($getDisplayFormat())->to('day.js') }}',
                             firstDayOfWeek: {{ $getFirstDayOfWeek() }},
+                            hoursStep: {{ $getHoursStep() }},
                             isAutofocused: @js($isAutofocused()),
                             locale: @js($getLocale()),
+                            minutesStep: {{ $getMinutesStep() }},
+                            secondsStep: {{ $getSecondsStep() }},
                             shouldCloseOnDateSelection: @js($shouldCloseOnDateSelection()),
                             state: $wire.{{ $applyStateBindingModifiers("\$entangle('{$statePath}')") }},
                         })"

@@ -7,4 +7,9 @@ return [
         'only_one_must_be_selected' => 'តែមួយគត់ :attribute ត្រូវតែត្រូវបានជ្រើសរើស។',
     ],
 
+
+    'date_time_picker' => [
+        'invalid_step' => 'The :attribute value does not align with the required step.',
+    ],
+
 ];

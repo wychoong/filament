@@ -16,8 +16,11 @@ window.dayjs = dayjs
 export default function dateTimePickerFormComponent({
     displayFormat,
     firstDayOfWeek,
+    hoursStep,
     isAutofocused,
     locale,
+    minutesStep,
+    secondsStep,
     shouldCloseOnDateSelection,
     state,
 }) {
@@ -140,6 +143,9 @@ export default function dateTimePickerFormComponent({
                     this.hour = 0
                 } else if (hour < 0) {
                     this.hour = 23
+                } else if (hoursStep > 1) {
+                    let snapped = Math.round(hour / hoursStep) * hoursStep
+                    this.hour = snapped > 23 ? Math.floor(23 / hoursStep) * hoursStep : snapped
                 } else {
                     this.hour = hour
                 }
@@ -162,6 +168,9 @@ export default function dateTimePickerFormComponent({
                     this.minute = 0
                 } else if (minute < 0) {
                     this.minute = 59
+                } else if (minutesStep > 1) {
+                    let snapped = Math.round(minute / minutesStep) * minutesStep
+                    this.minute = snapped > 59 ? Math.floor(59 / minutesStep) * minutesStep : snapped
                 } else {
                     this.minute = minute
                 }
@@ -184,6 +193,9 @@ export default function dateTimePickerFormComponent({
                     this.second = 0
                 } else if (second < 0) {
                     this.second = 59
+                } else if (secondsStep > 1) {
+                    let snapped = Math.round(second / secondsStep) * secondsStep
+                    this.second = snapped > 59 ? Math.floor(59 / secondsStep) * secondsStep : snapped
                 } else {
                     this.second = second
                 }

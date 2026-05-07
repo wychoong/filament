@@ -7,4 +7,9 @@ return [
         'only_one_must_be_selected' => 'Faqat bitta :attribute maydonini tanlash kerak.',
     ],
 
+
+    'date_time_picker' => [
+        'invalid_step' => 'The :attribute value does not align with the required step.',
+    ],
+
 ];

@@ -7,4 +7,9 @@ return [
         'only_one_must_be_selected' => 'ต้องเลือกฟิลด์ :attribute เดียวเท่านั้น',
     ],
 
+
+    'date_time_picker' => [
+        'invalid_step' => 'The :attribute value does not align with the required step.',
+    ],
+
 ];

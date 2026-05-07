@@ -7,4 +7,9 @@ return [
         'only_one_must_be_selected' => 'Vain yksi :attribute kenttä tulee olla valittuna.',
     ],
 
+
+    'date_time_picker' => [
+        'invalid_step' => 'The :attribute value does not align with the required step.',
+    ],
+
 ];
