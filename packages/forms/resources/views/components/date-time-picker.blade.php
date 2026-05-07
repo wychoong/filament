@@ -237,8 +237,8 @@
                                     type="number"
                                     inputmode="numeric"
                                     x-model.debounce="hour"
-                                    x-on:keydown.up.prevent="hour = +hour + {{ $getHoursStep() }}"
-                                    x-on:keydown.down.prevent="hour = +hour - {{ $getHoursStep() }}"
+                                    x-on:keydown.up.prevent="hour = (parseInt(hour) || 0) + {{ $getHoursStep() }}"
+                                    x-on:keydown.down.prevent="hour = (parseInt(hour) || 0) - {{ $getHoursStep() }}"
                                     class="me-1 w-10 border-none bg-transparent p-0 text-center text-sm text-gray-950 focus:ring-0 dark:text-white"
                                 />
 
@@ -254,8 +254,8 @@
                                     type="number"
                                     inputmode="numeric"
                                     x-model.debounce="minute"
-                                    x-on:keydown.up.prevent="minute = +minute + {{ $getMinutesStep() }}"
-                                    x-on:keydown.down.prevent="minute = +minute - {{ $getMinutesStep() }}"
+                                    x-on:keydown.up.prevent="minute = (parseInt(minute) || 0) + {{ $getMinutesStep() }}"
+                                    x-on:keydown.down.prevent="minute = (parseInt(minute) || 0) - {{ $getMinutesStep() }}"
                                     class="me-1 w-10 border-none bg-transparent p-0 text-center text-sm text-gray-950 focus:ring-0 dark:text-white"
                                 />
 
@@ -272,8 +272,8 @@
                                         type="number"
                                         inputmode="numeric"
                                         x-model.debounce="second"
-                                        x-on:keydown.up.prevent="second = +second + {{ $getSecondsStep() }}"
-                                        x-on:keydown.down.prevent="second = +second - {{ $getSecondsStep() }}"
+                                        x-on:keydown.up.prevent="second = (parseInt(second) || 0) + {{ $getSecondsStep() }}"
+                                        x-on:keydown.down.prevent="second = (parseInt(second) || 0) - {{ $getSecondsStep() }}"
                                         class="me-1 w-10 border-none bg-transparent p-0 text-center text-sm text-gray-950 focus:ring-0 dark:text-white"
                                     />
                                 @endif

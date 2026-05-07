@@ -53,8 +53,8 @@ it('renders the custom picker without step attribute on time inputs to prevent b
 it('renders the custom picker with keydown handlers for step-based arrow key navigation', function () {
     try {
         livewire(TestComponentWithNonNativeDateTimePicker::class)
-            ->assertSeeHtml('keydown.up.prevent')
-            ->assertSeeHtml('keydown.down.prevent');
+            ->assertSeeHtml('keydown.up.prevent="minute = (parseInt(minute) || 0) + 15"')
+            ->assertSeeHtml('keydown.down.prevent="minute = (parseInt(minute) || 0) - 15"');
     } catch (RootTagMissingFromViewException $exception) {
         // Flaky test
     }
