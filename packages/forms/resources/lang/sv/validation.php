@@ -7,9 +7,4 @@ return [
         'only_one_must_be_selected' => 'Endast ett :attribute fält kan väljas.',
     ],
 
-
-    'date_time_picker' => [
-        'invalid_step' => 'The :attribute value does not align with the required step.',
-    ],
-
 ];

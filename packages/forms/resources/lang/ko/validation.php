@@ -7,9 +7,4 @@ return [
         'only_one_must_be_selected' => ':attribute 필드 중 하나만 선택해야 합니다.',
     ],
 
-
-    'date_time_picker' => [
-        'invalid_step' => 'The :attribute value does not align with the required step.',
-    ],
-
 ];

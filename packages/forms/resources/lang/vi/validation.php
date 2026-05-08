@@ -7,9 +7,4 @@ return [
         'only_one_must_be_selected' => 'Chỉ có một trường :attribute được chọn.',
     ],
 
-
-    'date_time_picker' => [
-        'invalid_step' => 'The :attribute value does not align with the required step.',
-    ],
-
 ];
